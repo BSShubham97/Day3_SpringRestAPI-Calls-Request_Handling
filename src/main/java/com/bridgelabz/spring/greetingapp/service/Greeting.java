@@ -1,19 +1,28 @@
 package com.bridgelabz.spring.greetingapp.service;
 
-public class Greeting {
-    private final long id;
-    private final String content;
+public abstract class Greeting implements IGreetingService {
+    private String firstName;
+    private String lastName;
 
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
+    public Greeting(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public long getId() {
-        return id;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getContent() {
-        return content;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
 }
